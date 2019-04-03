@@ -104,8 +104,7 @@ function getArrayOfStrings(arr) {
  *    [ false, 0, NaN, '', undefined ]   => [ ]
  */
 function removeFalsyValues(arr) {
-	const falsy = [false, null, 0, "", undefined, NaN];
-	return arr.filter(a => !falsy.includes(a));
+	return arr.filter((elem) => Boolean(elem));
 }
 
 /**
@@ -385,8 +384,7 @@ function getItemsSum(arr) {
  *  [ null, undefined, NaN, false, 0, '' ]  => 6
  */
 function getFalsyValuesCount(arr) {
-	const falsy = [false, null, 0, "", undefined, NaN];
-	return arr.filter(a => falsy.includes(a)).length;
+	return arr.filter((elem) => !Boolean(elem)).length;
 }
 
 /**
